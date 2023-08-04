@@ -3,16 +3,24 @@
 // Execute `rustlings hint enums2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 #[derive(Debug)]
 enum Message {
     // TODO: define the different variants used below
+    Quit,
+    Move { x: i32, y: i32 },
+    Echo(String),
+    ChangeColor(i32, i32, i32),
 }
 
 impl Message {
     fn call(&self) {
         println!("{:?}", self);
+    }
+    fn Echo(&self, message: String) {
+        println!("{:?}", message);
+    }
+    fn ChangeColor(&self, r: i32, g: i32, b: i32) {
+        println!("({:?},{:?},{:?})", r, g, b);
     }
 }
 
